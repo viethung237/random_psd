@@ -1,4 +1,4 @@
-class MT19937:
+class MT:
     def __init__(self):
         self.index = 624
         self.state = [0]*624
@@ -27,11 +27,11 @@ class MT19937:
             if y % 2 != 0:
                 self.state[i] = self.state[i] ^ 0x9908b0df
         self.index = 0
-rng = MT19937()
+rng = MT()
 rng.seed(12345)
 random_sequence = [rng.rand() for i in range(500000)]
 binary = ''
 for i in random_sequence:
     binary += str(bin(i))[-1:]
-with open('resultbuh.txt','w',encoding="utf-8") as text :
+with open('resulr.txt','w',encoding="utf-8") as text :
     text.write(binary)
