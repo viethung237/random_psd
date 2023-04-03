@@ -33,5 +33,5 @@ random_sequence = [rng.rand() for i in range(500000)]
 binary = ''
 for i in random_sequence:
     binary += str(bin(i))[-1:]
-with open('resulr.txt','w',encoding="utf-8") as text :
+with open('result.txt','w',encoding="utf-8") as text :
     text.write(binary)
