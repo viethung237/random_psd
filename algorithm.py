@@ -1,5 +1,5 @@
 class MT:
-    def __init__(self):
+    def __init__(self): #initialize k
         self.index = 624
         self.state = [0]*624
 
@@ -7,9 +7,9 @@ class MT:
         self.index = 624
         self.state[0] = seed_value
         for i in range(1, 624):
-            self.state[i] = 0xffffffff & (1812433253 * (self.state[i-1] ^ (self.state[i-1] >> 30)) + i)
+            self.state[i] = 0xffffffff & (1812433253 * (self.state[i-1] ^ (self.state[i-1] >> 30)) + i)#append k[624] value
 
-    def rand(self):
+    def rand(self): #random generate algorithm
         if self.index >= 624:
             self.twist()
         y = self.state[self.index]
